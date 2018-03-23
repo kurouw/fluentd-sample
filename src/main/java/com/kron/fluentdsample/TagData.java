@@ -5,19 +5,31 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TagData {
-    private int id;
+    private String ip;
+    private int port;
+    private String id;
     private double rssi;
     private long time;
     private double phase;
 
-    public TagData(int id, double rssi, long time, double phase) {
+    public TagData(String ip, int port, String id, double rssi, long time, double phase) {
+        this.ip = ip;
+        this.port = port;
         this.id = id;
         this.rssi = rssi;
         this.time = time;
         this.phase = phase;
     }
 
-    public int getId() {
+    public String getIp() {
+        return ip;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public String getId() {
         return id;
     }
 
@@ -35,6 +47,8 @@ public class TagData {
 
     public Map<String, Object> toMap() {
         Map<String, Object> data = new HashMap<>();
+        data.put("ip", this.ip);
+        data.put("port", this.port);
         data.put("id", this.id);
         data.put("rssi", this.rssi);
         data.put("time", this.time);

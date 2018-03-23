@@ -1,3 +1,3 @@
 FROM fluent/fluentd
 
-RUN ["gem", "install", "fluent-plugin-elasticsearch", "--no-rdoc", "--no-ri", "--version", "1.9.2"]
+RUN ["gem", "install", "fluent-plugin-redis", "--no-rdoc", "--no-ri", "--version", "0.3.3"]
